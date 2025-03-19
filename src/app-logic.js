@@ -8,11 +8,14 @@
 //     });
 // }
 
-export function getData (location) {
-    fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/?key=P49KBTG66S7JSRWWNDCTLJR4F`, { mode: 'cors' })
+export function getData(location) {
+    return fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/?key=P49KBTG66S7JSRWWNDCTLJR4F`, { mode: 'cors' })
         .then(function(response) {
-            console.log(response.json());
+            return response.json();
+        })
+        .catch(function(err) {
+            console.log(err);
         });
-}
+};
 
 //Visual Crossing API uses the following main format for URL requests: https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/[location]/[date1]/[date2]?key=YOUR_API_KEY
