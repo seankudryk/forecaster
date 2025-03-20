@@ -11,10 +11,33 @@ submitButton.addEventListener("click", (event) => {
     //call getData, passing the current .value of the searchInput element as argumengetData(searchInput.value);
     const requestData = getData(searchInput.value);
 
-    requestData.then(response => console.log(response));
+    requestData.then(response => {
+        console.log(response);
+        function WeatherData(cityName, fullLocationName, currentTemperature, currentHigh, currentLow, currentConditions) {
+            this.cityName = cityName;
+            this.fullLocationName = fullLocationName;
+            this.currentTemperature = currentTemperature;
+            this.currentHigh = currentHigh;
+            this.currentLow = currentLow; 
+            this.currentConditions = currentConditions;
+        }
 
-    requestData.then(response => displayData(response));
+        const storedData = new WeatherData(
+            response.address, 
+            response.resolvedAddress, 
+            response.currentConditions.temp, 
+            response.days[0].tempmax, 
+            response.days[0].tempmin, 
+            response.currentConditions.conditions,
+        );
+
+        displayData(storedData);
+    })
+    .catch(error => {
+        console.error("Fetch failed", error);
+    });
 
     //reset input value back to nothing
     searchInput.value = "";
 });
+
