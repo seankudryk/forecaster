@@ -1,14 +1,10 @@
 import { getData } from './app-logic.js';
 import { displayData } from './display.js';
 import "./styles.css";
-import { Icon } from '@iconify/react';
-import rainIcon from '@iconify/icons-wi/wi-rain';
-
-<Icon icon={rainIcon} width="64" height="64" />
-
 
 const submitButton = document.querySelector("#submit-button");
 const searchInput = document.querySelector("#search-input");
+const weatherConditionGraphic = document.querySelector("#weather-condition-graphic");
 
 submitButton.addEventListener("click", (event) => {
     //prevent default submit conditions from firing when the button is clicked so we can do our own event handling
@@ -36,6 +32,7 @@ submitButton.addEventListener("click", (event) => {
             response.days[0].tempmin, 
             response.currentConditions.conditions,
         );
+
         searchInput.setCustomValidity("");
         displayData(storedData);
     })
@@ -47,4 +44,7 @@ submitButton.addEventListener("click", (event) => {
     //reset input value back to nothing
     searchInput.value = "";
 });
+
+
+
 
