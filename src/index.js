@@ -1,6 +1,11 @@
 import { getData } from './app-logic.js';
 import { displayData } from './display.js';
 import "./styles.css";
+import { Icon } from '@iconify/react';
+import rainIcon from '@iconify/icons-wi/wi-rain';
+
+<Icon icon={rainIcon} width="64" height="64" />
+
 
 const submitButton = document.querySelector("#submit-button");
 const searchInput = document.querySelector("#search-input");

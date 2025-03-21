@@ -9,20 +9,19 @@
     <div id="app-container">
         <div id="form-container">
             <form novalidate>
-                <div>
-                    <label for="search-input">Search:</label>
-                    <input type="text" id="search-input" name="search-input" placeholder="enter city name"/>
-                    <button id="submit-button">Submit</button>
-                </div>
-                <div>
-                    
-                </div>
-                
-            </form>
-            
+                <label for="search-input">Search:</label>
+                <input type="text" id="search-input" name="search-input" placeholder="enter city name"/>
+                <button id="submit-button">Submit</button>
+            </form>     
+            <div id="toggle-degress">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
         </div>
         <div id="output-container">
-            <data-container>
+            <div id="data-container">
                     <h1 id="city-name"></h1>
                 <h2 id="full-location-name"></h2>
                 <h3 id="current-temperature"></h3>
@@ -31,10 +30,11 @@
                     <span id="current-low"></span>
                     <span id="current-conditions"></h2>
                 </div>
-            </data-container>
-            <style-container>
-
-            </style-container>
+            </div>
+            <div id="style-container">
+                <span id="big-temperature"></span>
+                <img id="weather-condition-graphic" alt></img>
+            </div>
         </div>
     </div>
 </body>
