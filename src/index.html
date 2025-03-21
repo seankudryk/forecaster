@@ -6,21 +6,36 @@
     <title>Forecaster</title>
 </head>
 <body>
-    <div id="top"></div>
-    <div id="form-container">
-        <form>
-            <label for="search-input">Search:</label>
-            <input type="text" id="search-input" name="search-input" placeholder="enter city name"/>
-            <button id="submit-button">Submit</button>
-        </form>
-    </div>
-    <div id="output-container">
-        <h1 id="city-name"></h1>
-        <h2 id="full-location-name"></h2>
-        <h2 id="current-temperature"></h2>
-        <span id="current-high"></span>
-        <span id="current-low"></span>
-        <span id="current-conditions"></h2>
+    <div id="app-container">
+        <div id="form-container">
+            <form novalidate>
+                <div>
+                    <label for="search-input">Search:</label>
+                    <input type="text" id="search-input" name="search-input" placeholder="enter city name"/>
+                    <button id="submit-button">Submit</button>
+                </div>
+                <div>
+                    
+                </div>
+                
+            </form>
+            
+        </div>
+        <div id="output-container">
+            <data-container>
+                    <h1 id="city-name"></h1>
+                <h2 id="full-location-name"></h2>
+                <h3 id="current-temperature"></h3>
+                <div id="who-cares-container">
+                    <span id="current-high"></span>
+                    <span id="current-low"></span>
+                    <span id="current-conditions"></h2>
+                </div>
+            </data-container>
+            <style-container>
+
+            </style-container>
+        </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 25vh;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: rgb(135, 182, 185);
+}
+
+#app-container {
+    width: 50%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1%;
+    filter: drop-shadow(4px 4px 4px rgb(190, 190, 255));
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+form > * {
+    margin-right: 5px;
+}
+
+#form-container {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(222, 222, 222);
+}
+
+#search-input {
+    border-radius: 2px;
+    height: 25px;
+    padding-left: 4px;
+}
+
+#search-input:invalid {
+    border: 1px solid red;
+}
+
+#search-input:valid {
+    border: 1px solid black;
+}
+
+#output-container>* {
+    padding-bottom: 5px;
+}
+
+#city-name {
+    padding-top: 5px;
+}
+
+#submit-button {
+    border: none;
+    color: white;
+    background-color: rgb(113, 154, 235);
+    height: 26px;
+    width: 60px;
+    border-radius: 3px;
+}
+
+#submit-button:hover {
+    background-color: rgb(45, 75, 135);
+}
+
+#submit-button:active {
+    background-color: black;
+}
+
+h1 {
+    color:rgb(62, 62, 63);
+}
+
+h2 {
+    color:rgb(113, 115, 119);
+    font-weight: 400;
+}
+
+#who-cares-container {
+    padding-top: 2px;
+}
+
+#who-cares-container > * {
+    border-right: 2px solid rgb(220, 218, 218);
+    padding: 0px 2px;
+}
+
+#current-conditions {
+    border-right: none;
+}
