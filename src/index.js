@@ -4,7 +4,7 @@ import "./styles.css";
 
 const submitButton = document.querySelector("#submit-button");
 const searchInput = document.querySelector("#search-input");
-const weatherConditionGraphic = document.querySelector("#weather-condition-graphic");
+
 
 submitButton.addEventListener("click", (event) => {
     //prevent default submit conditions from firing when the button is clicked so we can do our own event handling
@@ -19,6 +19,7 @@ submitButton.addEventListener("click", (event) => {
             this.cityName = cityName;
             this.fullLocationName = fullLocationName;
             this.currentTemperature = currentTemperature;
+            this.roundedCurrentTemperature = Math.round(currentTemperature);
             this.currentHigh = currentHigh;
             this.currentLow = currentLow; 
             this.currentConditions = currentConditions;

@@ -13,11 +13,13 @@
                 <input type="text" id="search-input" name="search-input" placeholder="enter city name"/>
                 <button id="submit-button">Submit</button>
             </form>     
-            <div id="toggle-degress">
+            <div id="toggle-degrees">
+                <span id="celsius" class="degree-symbol">&#176;C</span>
                 <label class="switch">
                     <input type="checkbox">
-                    <span class="slider round"></span>
+                    <span class="slider round" id="toggle-slider"></span>
                 </label>
+                <span id="farenheit" class="degree-symbol">&#176;F</span>
             </div>
         </div>
         <div id="output-container">
@@ -33,7 +35,7 @@
             </div>
             <div id="style-container">
                 <span id="big-temperature"></span>
-                <img id="weather-condition-graphic" alt></img>
+                <span id="weather-condition-image"></span>
             </div>
         </div>
     </div>
