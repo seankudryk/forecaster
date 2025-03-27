@@ -206,3 +206,8 @@ h2 {
   .slider.round:before {
     border-radius: 50%;
   }
+
+  #weather-condition-image {
+    height: 90px;
+    width: 90px;
+  }

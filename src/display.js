@@ -1,4 +1,7 @@
-import Iconify from '@iconify/iconify';
+import ClearIcon from './icons/wi-day-sunny.svg';
+import OvercastIcon from './icons/wi-cloudy.svg';
+import PartiallyCloudy from './icons/wi-day-cloudy.svg';
+
 
 const cityName = document.querySelector("#city-name");
 const fullLocationName = document.querySelector("#full-location-name");
@@ -8,31 +11,32 @@ const currentLow = document.querySelector("#current-low");
 const currentConditions = document.querySelector("#current-conditions");
 const bigTemperature = document.querySelector("#big-temperature");
 
-const weatherConditionImage = document.querySelector("#weather-condition-image");
+const styleContainer = document.querySelector("#style-container");
 
 const generateSVG = (weatherCondition) => {
+    const weatherConditionImage = document.querySelector("#weather-condition-image");
+
+    if (weatherConditionImage) {
+        styleContainer.removeChild(weatherConditionImage);
+    }
 
     let searchTerm = weatherCondition.replace(/\s+/g, "").toLowerCase();
-
     console.log(searchTerm);
 
-    const weatherConditionMap = {
-        clear: "wi:day-sunny",
-        overcast: "wi:cloudy",
-        partiallycloudy: "wi:day-cloudy" 
-    }
-    
-    console.log(weatherConditionMap[searchTerm]);
-    
-    const svg = Iconify.renderSVG(weatherConditionMap[searchTerm], {
-        height: 120,
-        width: 120
-    });   
-    
-    if (svg) {
-        weatherConditionImage.appendChild(svg);
+    const weatherIconMap = {
+        clear: ClearIcon,
+        overcast: OvercastIcon,
+        partiallycloudy: PartiallyCloudy,
+    };
+
+    if (!weatherIconMap[searchTerm]) {
+        console.warn("No valid SVG for the current weather condition");
     } else {
-        console.warn("Iconfiy failed to render SVG");
+        const weatherImg = document.createElement("img");
+        weatherImg.src = weatherIconMap[searchTerm];
+        weatherImg.id = "weather-condition-image";
+        
+        styleContainer.appendChild(weatherImg);
     }
 }
 
