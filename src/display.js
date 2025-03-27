@@ -2,7 +2,6 @@ import ClearIcon from './icons/wi-day-sunny.svg';
 import OvercastIcon from './icons/wi-cloudy.svg';
 import PartiallyCloudy from './icons/wi-day-cloudy.svg';
 
-
 const cityName = document.querySelector("#city-name");
 const fullLocationName = document.querySelector("#full-location-name");
 const currentTemperature = document.querySelector("#current-temperature");
